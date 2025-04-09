@@ -1,12 +1,12 @@
 ### 📝 To-Do List Application – Full Stack (Laravel + React)
 
-## 🚀 Overview
+# 🚀 Overview
 
 **This project is a full-stack To-Do List Application built using modern technologies like Laravel (with SQLite) on the backend and ReactJS with TypeScript on the frontend. It supports full task management, user authentication, soft deletes with recovery, and role-based state management using Redux. The UI is crafted with shadcn/ui components for a modern, accessible look.**
 
 ---
 
-## 🛠️ Technologies Used
+**🛠️ Technologies Used**
 
 **🔧 Backend**
 
@@ -75,3 +75,7 @@ Start React App
 npm run dev
 `
 
+![Image](https://github.com/user-attachments/assets/a352e8ee-eb41-43c4-89c5-bd758b2d00b8)
+![Image](https://github.com/user-attachments/assets/35e8bceb-2cb8-4d78-87cc-9337c1aaa2d8)
+![Image](https://github.com/user-attachments/assets/0a529fd5-844d-4c67-8a3f-bd9551a6e687)
+![Image](https://github.com/user-attachments/assets/a59cf533-76a5-4b5f-b3ed-641edb32861c)
