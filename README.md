@@ -74,11 +74,17 @@ php artisan serve
 **💻 2. Frontend Setup (React + TypeScript)**
 `
 cd frontend
+
 npm install
+
 Configure API base URL
-In .en
+
+In .env
+
 BASE_URL = 'http://localhost:8000/api/v1';
+
 Start React App
+
 npm run dev
 `
 
