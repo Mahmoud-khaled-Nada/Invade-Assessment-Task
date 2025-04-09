@@ -89,6 +89,5 @@ npm run dev
 `
 
 ![Image](https://github.com/user-attachments/assets/a352e8ee-eb41-43c4-89c5-bd758b2d00b8)
-![Image](https://github.com/user-attachments/assets/35e8bceb-2cb8-4d78-87cc-9337c1aaa2d8)
 ![Image](https://github.com/user-attachments/assets/0a529fd5-844d-4c67-8a3f-bd9551a6e687)
 ![Image](https://github.com/user-attachments/assets/a59cf533-76a5-4b5f-b3ed-641edb32861c)
