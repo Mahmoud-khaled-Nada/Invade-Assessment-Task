@@ -8,89 +8,69 @@
 
 ## 🛠️ Technologies Used
 
-## 🔧 Backend
+**🔧 Backend**
 
-# Laravel 12 – Web framework (API only)
+Laravel 12 – Web framework (API only)
 
-# SQLite – Lightweight database for simplicity
+SQLite – Lightweight database for simplicity
 
-# JWT Auth – Token-based API authentication (secure and stateless)
+WT Auth – Token-based API authentication (secure and stateless)
 
-## 💻 Frontend
+💻 Frontend
 
-## ReactJS – Component-based frontend
+ReactJS – Component-based frontend
 
-# TypeScript – Type-safe development
+TypeScript – Type-safe developmen
 
-# Redux – State management (task list, auth state, etc.)
+Redux – State management (task list, auth state, etc.)
 
-# shadcn/ui – UI component library based on Radix & Tailwind
+shadcn/ui – UI component library based on Radix & Tailwind
 
-# Axios – HTTP client for API requests
+Axios – HTTP client for API requests
 
 ---
 
-## ✅ Features
+**✅ Features**
 
 1. 🔐 Authentication
 2. User Registration & Login via JWT
 
-# Protected API routes
-
-# 📋 To-Do Task Management
-
+**Protected API routes**
+**📋 To-Do Task Management**
 3. Add / Edit / Delete (soft delete) tasks
-
 4. Restore deleted tasks
-
 5. Mark tasks as completed or pending
-
 6. Filter tasks (Completed / Pending)
-
 7. Due date assignment for tasks
-
 8. Pagination for task listing
 
 ---
-
-## ⚙️ Operating Steps
-
-# 🔌 1. Backend Setup (Laravel)
+**⚙️ Operating Steps**
+**🔌 1. Backend Setup (Laravel)**
 
 `
 cd server
 composer install
 cp .env.example .env
 php artisan key:generate
-
-# Configure SQLite database
-
+**Configure SQLite database**
 touch database/database.sqlite
 php artisan migrate
-
-# Optional: seed data
-
+**Optional: seed data**
 php artisan db:seed
-
-# JWT Auth Setup
-
+**JWT Auth Setup**
 php artisan jwt:secret
-
-# Serve API
-
+**Serve API**
 php artisan serve
 `
 
-# 💻 2. Frontend Setup (React + TypeScript)
-
+**💻 2. Frontend Setup (React + TypeScript)**
 `
 cd frontend
 npm install
-
 Configure API base URL
 In .en
 BASE_URL = 'http://localhost:8000/api/v1';
-
 Start React App
 npm run dev
 `
