@@ -1,19 +1,27 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Task } from "../utils/types";
-import { getTasks } from "../utils/api";
+import { getTasks, searchTasks } from "../utils/api";
+
+export const fetchTasksThunk = createAsyncThunk("fetch/tasks", async (page: number = 1) => {
+  return getTasks(page); // should return full pagination object
+});
+
+export const searchTasksThunk = createAsyncThunk("search/tasks", async (query: string) => {
+  return searchTasks(query); // should return full pagination object
+});
 
 export interface TaskState {
   data: Task[];
   loading: boolean;
+  currentPage: number;
+  lastPage: number;
 }
-
-export const fetchTasksThunk = createAsyncThunk("fetch/tasks", async () => {
-  return getTasks();
-});
 
 const initialState: TaskState = {
   data: [],
   loading: false,
+  currentPage: 1,
+  lastPage: 1,
 };
 
 export const taskSlice = createSlice({
@@ -24,7 +32,7 @@ export const taskSlice = createSlice({
       state.data.unshift(action.payload);
     },
     updateTask: (state, action): void => {
-      const { id , label } = action.payload;
+      const { id, label } = action.payload;
       const findTask = state.data.find((task) => task.id === id);
       if (findTask) {
         findTask.task = label;
@@ -45,8 +53,9 @@ export const taskSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTasksThunk.fulfilled, (state, action) => {
-        const { data } = action.payload;
-        state.data = data;
+        state.data = action.payload.data;
+        state.currentPage = action.payload.current_page;
+        state.lastPage = action.payload.last_page;
         state.loading = false;
       })
       .addCase(fetchTasksThunk.pending, (state, action) => {
@@ -54,6 +63,9 @@ export const taskSlice = createSlice({
       })
       .addCase(fetchTasksThunk.rejected, (state, action) => {
         state.loading = false;
+      })
+      .addCase(searchTasksThunk.fulfilled, (state, action) => {
+        state.data = action.payload
       });
   },
 });

@@ -7,6 +7,7 @@ import { useToast } from "../../utils/hooks/useToast";
 import { fetchTasksThunk } from "../../store/taskSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store";
+import { SearchModel } from "./SearchModel";
 
 type Props = {
   user: any;
@@ -20,8 +21,7 @@ export const HeaderSection = ({ user, signOut }: Props) => {
   const restore = () => {
     getRestore()
       .then(({ data }) => {
-        console.log(data);
-        dispatch(fetchTasksThunk());
+        dispatch(fetchTasksThunk(1));
         success("Tasks restored successfully");
       })
       .catch((err: any) => {
@@ -45,6 +45,8 @@ export const HeaderSection = ({ user, signOut }: Props) => {
 
       {/* Right: Add Task Button + Logout Button */}
       <div className="flex-shrink-0 flex items-center space-x-3">
+        <SearchModel />
+
         <AddTaskModal />
 
         <Button className="ml-4 bg-black flex items-center space-x-2" onClick={restore}>

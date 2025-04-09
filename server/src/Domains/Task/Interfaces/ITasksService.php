@@ -9,8 +9,9 @@ use Illuminate\Support\Collection;
 
 interface ITasksService
 {
-    public function all(): Collection;
+    public function all();
 
+    public function search(string $query): Collection;
     public function add(array $data): Task;
 
     public function update(Task $task, array $data);

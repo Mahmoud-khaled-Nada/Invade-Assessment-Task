@@ -4,7 +4,7 @@ import { storage } from "./storage";
 
 const API_BASE_URL = import.meta.env.VITE_API_SERVER_URL;
 
-const axiosClient = axios.create({
+export const axiosClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
@@ -35,7 +35,16 @@ export const postLogout = () => axiosClient.post("/auth/logout");
 
 export const getAuthUser = (config = {}) => axiosClient.get("/auth/me", config);
 
-export const getTasks = () => axiosClient.get<Task[]>("/tasks");
+export const getTasks = async (page = 1) => {
+  const { data } = await axiosClient.get(`/tasks?page=${page}`);
+  return data;
+}
+//search
+
+export const searchTasks = async (query: string) => {
+  const { data } = await axiosClient.get(`/tasks/search?query=${query}`);
+  return data;
+}
 
 export const postAddTask = (data: TaskParams) => axiosClient.post("/tasks", data);
 

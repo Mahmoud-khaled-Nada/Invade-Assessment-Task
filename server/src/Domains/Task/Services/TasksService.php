@@ -15,11 +15,15 @@ final class TasksService implements ITasksService
         private readonly TesksRepository $repository
     ) {}
 
-    public function all(): Collection
+    public function all()
     {
         return $this->repository->all();
     }
 
+    public function search(string $query): Collection
+    {
+        return $this->repository->search($query);
+    }
     public function add(array $data): Task
     {
         return $this->repository->add($data);

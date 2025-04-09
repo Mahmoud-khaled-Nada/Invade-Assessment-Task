@@ -24,6 +24,16 @@ class TaskController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+            $tasks = $this->tasksService->search($query );
+            return response()->json($tasks, 200);
+        } catch (\Throwable $th) {
+            return $this->error([], $th->getMessage());
+        }
+    }
 
     public function create(TaskRequest $request)
     {
