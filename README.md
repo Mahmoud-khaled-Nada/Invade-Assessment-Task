@@ -51,15 +51,22 @@ Axios – HTTP client for API requests
 `
 cd server
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
+
 **Configure SQLite database**
 touch database/database.sqlite
+
 php artisan migrate
+
 **Optional: seed data**
 php artisan db:seed
+
 **JWT Auth Setup**
 php artisan jwt:secret
+
 **Serve API**
 php artisan serve
 `
