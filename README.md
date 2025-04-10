@@ -37,12 +37,16 @@ Axios – HTTP client for API requests
 
 **Protected API routes**
 **📋 To-Do Task Management**
+
 3. Add / Edit / Delete (soft delete) tasks
+
 4. Restore deleted tasks
+
 5. Mark tasks as completed or pending
-6. Filter tasks (Completed / Pending)
-7. Due date assignment for tasks
-8. Pagination for task listing
+
+6. Due date assignment for tasks
+
+7. Pagination for task listing
 
 ---
 **⚙️ Operating Steps**
